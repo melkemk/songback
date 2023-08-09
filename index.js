@@ -7,4 +7,6 @@ mongoose.connect(process.env.MONGO,{   useNewUrlParser: true,
 useUnifiedTopology: true}).then(()=>{
     let port =process.env.PORT;
 app.listen(port,()=>console.log('connected on http://localhost:'+port))}
-)
+) .catch((error) => {
+    console.error('Error connecting to MongoDB Atlas:', error);
+  });
